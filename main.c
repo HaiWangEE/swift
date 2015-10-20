@@ -2,8 +2,8 @@
 
 int main ()
 {
-	int total; // number of Fibonacci numbers.
-	printf ("Enter the number of the Fibonacci umbers: ");
+	int total; // number of Fibonacci array elements.
+	printf ("Enter the number of elements in the Fibonacci arrary: ");
 	scanf ("%d", &total);
 	
 	int i, primeIndicator;
@@ -26,6 +26,7 @@ int main ()
 		for (i = 3; i <= total; i++)
 		{
 			fib = fib_1 + fib_2; // calculate the Fibonacci number of this round
+			// check if the number is divisible by 3:
 			if (fib % 3 == 0)
 			{
 				if (i == total)
@@ -33,6 +34,7 @@ int main ()
 				else
 					printf("Buzz, ");
 			}
+			// check if the number is divisible by 5:
 			else if (fib % 5 == 0)
 			{
 				if (i == total)
@@ -40,6 +42,7 @@ int main ()
 				else
 					printf("Fizz, ");
 			}
+			// even numbers are not prime!
 			else if (fib % 2 == 0)
 			{
 				if (i == total)
@@ -49,7 +52,7 @@ int main ()
 			}
 			else
 			{
-				// Check if the number is a prime number
+				// Check if the number is a prime number:
 				primeIndicator = 1; // by default, the number is assumed to be a prime number
 				for (j = 7; j*j <= total; j++)
 				{
@@ -74,14 +77,13 @@ int main ()
 						printf("%llu, ", fib);
 				}
 			}
-			
-			// update the Fibonacci array, so that a new Fibonacci number can be generated later
+			// update the Fibonacci array, so that a new Fibonacci number can be generated in the next loop!
 			fib_1 = fib_2;
 			fib_2 = fib;
 		}
 	}
 	else
-		printf("Invalid number entered! The umber must be possitive integer, and it must be less than 344! /0"); // some invalid input
+		printf("Invalid number entered! The umber must be possitive integer, and it must be less than 344! /0"); // some invalid inputs
 	
 	return 0;
 }
