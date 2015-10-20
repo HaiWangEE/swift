@@ -1,5 +1,5 @@
 # swift
-The program is written in C.
+The program (main.c) is written in C.
 
 The program first ask the user to type the number of elements in a Fibonacci array.
 The number must be possitive and less than 345. Then for each element (F(n)) in the Fibonacci
